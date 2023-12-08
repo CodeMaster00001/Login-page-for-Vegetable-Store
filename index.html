@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: black;
+        }
+
+        #login-container {
+            text-align: center;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            color: white;
+            opacity: 0; /* Initially invisible */
+            animation: fadeIn 1s forwards; /* Fade-in animation */
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        input {
+            padding: 8px;
+            margin: 5px;
+        }
+
+        button {
+            padding: 10px;
+            margin-top: 10px;
+            cursor: pointer;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="login-container">
+        <h3>To go to Vaibhav Vegetable Store</h3>
+        <h1>Login</h1>
+        <label for="username">Username:</label>
+        <input type="text" id="username" placeholder="Enter username">
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" placeholder="Enter password">
+
+        <button onclick="login()">Login</button>
+        <p id="status"></p>
+    </div>
+
+    <script>
+        function login() {
+            var usernameInput = document.getElementById('username').value;
+            var passwordInput = document.getElementById('password').value;
+            var statusMessage = document.getElementById('status');
+
+            // Check if username and password match
+            if (usernameInput === 'VAIBHAV' && passwordInput === '1234567890') {
+                statusMessage.textContent = 'Login successful!';
+                // Redirect after 2 seconds (adjust as needed)
+                setTimeout(function() {
+                    window.location.href = ' https://codemaster00001.github.io/Vaibhav-Shopping-cart/';
+                }, 100);
+            } else {
+                statusMessage.textContent = 'Incorrect username or password. Try again.';
+            }
+        }
+    </script>
+
+</body>
+</html>
